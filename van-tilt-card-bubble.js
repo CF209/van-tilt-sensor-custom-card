@@ -100,7 +100,7 @@ class VanTiltCardBubble extends HTMLElement {
     //const xOffset = (parseFloat(xAngleStr) * -20-(levelSize/2+bubbleSize/2)).toString();
     //const yOffset = (parseFloat(yAngleStr) * -20-(levelSize/2+bubbleSize/2)).toString();
     const xOffset = Math.round(
-      -parseFloat(xAngleStr) * factor - bubbleSize / 2
+      parseFloat(xAngleStr) * factor - bubbleSize / 2
     ).toString();
     const yOffset = Math.round(
       -parseFloat(yAngleStr) * factor - bubbleSize / 2
