@@ -1,3 +1,5 @@
+const VAN_TILT_BASE_URL = new URL('.', import.meta.url).href;
+
 class VanTiltCard extends HTMLElement {
   // Whenever the state changes, a new `hass` object is set. Use this to
   // update your content.
@@ -26,12 +28,12 @@ class VanTiltCard extends HTMLElement {
     this.content.innerHTML = `
       <row style="display: flex;">
         <div style="flex: 50%;text-align: center;">
-          <img src="/local/van-tilt-card/img/promaster_side.png" style="max-width: 100%;height: 100px;transform:rotate(${yRotate}deg);">
+          <img src="${VAN_TILT_BASE_URL}img/promaster_side.png" style="max-width: 100%;height: 100px;transform:rotate(${yRotate}deg);">
           <hr>
           <h1>${yAngleStr}°</h1>
         </div>
         <div style="flex: 50%;text-align: center;">
-          <img src="/local/van-tilt-card/img/promaster_back.png" style="max-width: 100%;height: 100px;transform:rotate(${xRotate}deg);">
+          <img src="${VAN_TILT_BASE_URL}img/promaster_back.png" style="max-width: 100%;height: 100px;transform:rotate(${xRotate}deg);">
           <hr>
           <h1>${xAngleStr}°</h1>
         </div>
