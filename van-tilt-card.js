@@ -14,13 +14,18 @@ class VanTiltCard extends HTMLElement {
       this.content = this.querySelector('div');
     }
 
+    const formatAngle = (state) => {
+      const n = parseFloat(state);
+      return Number.isFinite(n) ? n.toFixed(1) : state;
+    };
+
     const entityX = this.config.entity_x;
     const xAngle = hass.states[entityX];
-    const xAngleStr = xAngle ? xAngle.state : 'unavailable';
+    const xAngleStr = formatAngle(xAngle ? xAngle.state : 'unavailable');
 
     const entityY = this.config.entity_y;
     const yAngle = hass.states[entityY];
-    const yAngleStr = yAngle ? yAngle.state : 'unavailable';
+    const yAngleStr = formatAngle(yAngle ? yAngle.state : 'unavailable');
 
     const xRotate = (parseFloat(xAngleStr) * 3).toString();
     const yRotate = (parseFloat(yAngleStr) * 3).toString();
