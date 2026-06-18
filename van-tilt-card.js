@@ -27,8 +27,13 @@ class VanTiltCard extends HTMLElement {
     const yAngle = hass.states[entityY];
     const yAngleStr = formatAngle(yAngle ? yAngle.state : 'unavailable');
 
-    const xRotate = (parseFloat(xAngleStr) * 3).toString();
-    const yRotate = (parseFloat(yAngleStr) * 3).toString();
+    const clampRotate = (state) => {
+      const n = parseFloat(state) * 3;
+      return Math.max(-45, Math.min(45, n)).toString();
+    };
+
+    const xRotate = clampRotate(xAngleStr);
+    const yRotate = clampRotate(yAngleStr);
 
     this.content.innerHTML = `
       <row style="display: flex;">
