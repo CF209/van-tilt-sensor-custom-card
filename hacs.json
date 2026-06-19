@@ -1,6 +1,5 @@
 {
   "name": "Van Tilt Card",
-  "filename": "van-tilt-sensor-custom-card.zip",
-  "zip_release": true,
+  "filename": "van-tilt-card.js",
   "render_readme": true
 }
